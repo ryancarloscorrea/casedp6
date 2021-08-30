@@ -9,7 +9,7 @@
 
 ga("send", "pageview", location.pathname);
 
-///// PAGINA HOME ////////////
+///// Pàra todas as paginas////////////
 
 /// verificação feita para evitar ocorrência de logs no console
 if (document.getElementsByClassName("menu")) {
@@ -20,7 +20,6 @@ if (document.getElementsByClassName("menu")) {
       eventAction: "entre_em_contato",
       eventLabel: "link_externo",
     });
-    console.log(ga.q);
   });
   document.getElementById("download-pdf").addEventListener("click", () => {
     ga("send", {
@@ -29,7 +28,6 @@ if (document.getElementsByClassName("menu")) {
       eventAction: "download_pdf",
       eventLabel: "download_pdf",
     });
-    console.log(ga.q);
   });
 }
 //////////// Pagina analise ////////////
@@ -52,11 +50,10 @@ if (document.getElementById("container-cards")) {
 }
 
 ////// pagina sobre //////
-//
 
 if (document.getElementById("form-contato")) {
   const auxIdsInputs = ["nome", "email", "telefone", "aceito"];
-  /// implementar aceito
+
   auxIdsInputs.map((auxId) => {
     const element = document.getElementById(auxId);
     if (auxId !== "aceito") {
@@ -68,7 +65,6 @@ if (document.getElementById("form-contato")) {
             eventAction: auxId,
             eventLabel: "preencheu",
           });
-          console.log(ga.q);
         }
       });
     } else {
@@ -79,7 +75,6 @@ if (document.getElementById("form-contato")) {
           eventAction: auxId,
           eventLabel: "preencheu",
         });
-        console.log(ga.q);
       });
     }
   });
@@ -101,7 +96,6 @@ if (document.getElementById("body-sobre")) {
           eventAction: "enviado",
           eventLabel: "enviado",
         });
-        console.log(ga.q);
       }
     }
   };
